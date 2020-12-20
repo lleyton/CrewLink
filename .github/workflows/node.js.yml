@@ -25,6 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
+    - run: mkdir -p node_modules\iohook\builds\electron-v80-win32-x64\build\Release\
+    - run: cp iohook\iohook.node node_modules\iohook\builds\electron-v80-win32-x64\build\Release\
+    - run: cp iohook\uiohook.dll node_modules\iohook\builds\electron-v80-win32-x64\build\Release\
     - run: yarn run dist
     - uses: actions/upload-artifact@v2
       with:
