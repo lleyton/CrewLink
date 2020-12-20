@@ -26,3 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
     - run: yarn run dist
+    - uses: actions/upload-artifact@v2
+      with:
+        name: owo
+        path: dist
+
